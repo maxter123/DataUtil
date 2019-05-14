@@ -1,5 +1,10 @@
 package es.cliente.datautil;
 
+import javax.swing.JOptionPane;
+
+import es.datautil.Data;
+import es.datautil.Meses;
+
 public class Principal {
 
 	public static void main(String[] args) {
@@ -24,7 +29,15 @@ public class Principal {
 		   
 		
 	    */ 
-		
+		int mes = 1;
+		do {
+			mes = Integer.parseInt(JOptionPane.showInputDialog("Insira um mes!"));
+	      } while (mes < 1 && mes > 12);
+		if (Meses.mesFromInt(mes) == Meses.FEVEREIRO) {
+			System.out.println(Data.diasMes(Meses.mesFromInt(mes), Integer.parseInt(JOptionPane.showInputDialog("Insira o ano!"))));
+		} else {
+			System.out.println(Data.diasMes(Meses.mesFromInt(mes)));
+		}
 		
 		
 		
